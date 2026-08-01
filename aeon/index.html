@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AEON 다운로드 — 방치형 우주 키우기</title>
+  <meta name="description" content="티끌에서 은하까지, 탭 한 번으로 우주를 창조. 빅뱅으로 다시 태어나는 잔잔한 힐링 방치형. 무료 · 인앱결제 없음." />
+
+  <!-- 링크 미리보기 (Reddit / X / 카톡 / Discord) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HYPERSPEED" />
+  <meta property="og:title" content="AEON — 방치형 우주 키우기" />
+  <meta property="og:description" content="티끌에서 은하까지, 탭 한 번으로 우주를 창조. 빅뱅으로 다시 태어나는 잔잔한 힐링 방치형. 무료 · 인앱결제 없음." />
+  <meta property="og:image" content="https://hyperspeedgames.com/aeon/og.jpg" />
+  <meta property="og:url" content="https://hyperspeedgames.com/aeon/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- 스토어가 앱을 직접 인식하도록 (Safari 스마트 배너) -->
+  <meta name="apple-itunes-app" content="app-id=6788979247" />
+
+  <script>
+    // ?s=<소스> 로 유입 채널을 구분한다. 예: /aeon/?s=shorts, ?s=reddit, ?s=tiktok
+    // → Play 는 referrer(utm) 로, App Store 는 ct 로 넘어가 각 콘솔에서 집계된다.
+    (function () {
+      var src = (new URLSearchParams(location.search).get('s') || 'web')
+                  .replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'web';
+
+      var IOS = 'https://apps.apple.com/app/id6788979247'
+              + '?ct=' + encodeURIComponent(src) + '&mt=8';
+      var PLAY = 'https://play.google.com/store/apps/details?id=com.hyperspeed.aeon'
+               + '&referrer=' + encodeURIComponent(
+                   'utm_source=' + src + '&utm_medium=social&utm_campaign=organic_' + src);
+
+      var ua = navigator.userAgent;
+      // iPadOS 13+ 는 UA 가 Macintosh 로 나오므로 터치 지원으로 가려낸다.
+      var isIOS = /iPad|iPhone|iPod/.test(ua)
+               || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/.test(ua);
+
+      window.__STORE = { ios: IOS, play: PLAY };
+      if (isIOS)          location.replace(IOS);
+      else if (isAndroid) location.replace(PLAY);
+      // 그 외(데스크톱)는 아래 선택 화면을 그대로 보여준다.
+    })();
+  </script>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+         background:#05060d;color:#f4f7ff;min-height:100vh;display:flex;
+         align-items:center;justify-content:center;padding:32px 20px;line-height:1.6}
+    .wrap{max-width:520px;width:100%;text-align:center}
+    .shot{width:100%;border-radius:14px;border:1px solid #2a2140;display:block;margin-bottom:28px}
+    h1{font-size:2rem;letter-spacing:.18em;font-weight:800;color:#fbf3e3}
+    .tag{color:#e8b06a;margin-top:10px;font-size:1rem}
+    ul{list-style:none;margin:22px 0 28px;color:#b6b0cc;font-size:.95rem}
+    li{margin:6px 0}
+    li::before{content:'▪';color:#e8b06a;margin-right:8px}
+    .btns{display:flex;flex-direction:column;gap:12px}
+    a.btn{background:#e8b06a;color:#1a1206;text-decoration:none;padding:15px 24px;
+          border-radius:10px;font-weight:800;font-size:1.02rem;display:block}
+    a.btn.alt{background:#131126;color:#f4f7ff;border:1px solid #382c58;font-weight:700}
+    footer{margin-top:30px;color:#7b749a;font-size:.82rem}
+    footer a{color:#e8b06a}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="shot" src="og.jpg" alt="AEON 플레이 화면" />
+    <h1>AEON</h1>
+    <p class="tag">생명이 깃든 나만의 힐링 우주</p>
+    <ul>
+      <li>티끌에서 은하까지 · 탭 한 번으로</li>
+      <li>블랙홀 · 펄서 · 퀘이사를 수집</li>
+      <li>무료 · 인앱결제 없음 · 오프라인 플레이</li>
+    </ul>
+    <div class="btns">
+      <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.hyperspeed.aeon">Google Play (Android)</a>
+      <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6788979247">App Store (iPhone / iPad)</a>
+    </div>
+    <footer>© 2026 <a href="/">HYPERSPEED</a></footer>
+  </div>
+  <script>
+    // JS 가 돌면 버튼에도 유입 소스 태그를 붙인다(위 href 는 무-JS 폴백).
+    if (window.__STORE) {
+      document.getElementById('play').href = window.__STORE.play;
+      document.getElementById('ios').href  = window.__STORE.ios;
+    }
+  </script>
+</body>
+</html>
