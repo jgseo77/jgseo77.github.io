@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>전선: 퍼즐 전쟁 다운로드 — 블록을 맞춰 전선을 밀어내는 전략 퍼즐</title>
+  <meta name="description" content="블록을 맞추면 병력이 된다. 연쇄로 군대를 불리고 일격으로 전선을 뒤집는 매치3 전략 퍼즐. 8챕터 64스테이지와 다른 플레이어 기록과 겨루는 대전." />
+
+  <!-- 링크 미리보기 (Reddit / X / 카톡 / Discord) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HYPERSPEED" />
+  <meta property="og:title" content="FRONTLINE — 전선: 퍼즐 전쟁" />
+  <meta property="og:description" content="블록을 맞추면 병력이 된다. 연쇄로 군대를 불리고 일격으로 전선을 뒤집는 매치3 전략 퍼즐." />
+  <meta property="og:image" content="https://hyperspeedgames.com/frontline/og.jpg" />
+  <meta property="og:url" content="https://hyperspeedgames.com/frontline/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- 스토어가 앱을 직접 인식하도록 (Safari 스마트 배너) -->
+  <meta name="apple-itunes-app" content="app-id=6800202888" />
+
+  <script>
+    // ?s=<소스> 로 유입 채널을 구분한다. 예: /frontline/?s=shorts, ?s=reddit, ?s=tiktok
+    // → Play 는 referrer(utm) 로, App Store 는 ct 로 넘어가 각 콘솔에서 집계된다(AEON · VALIX 페이지와 같은 규칙).
+    (function () {
+      var src = (new URLSearchParams(location.search).get('s') || 'web')
+                  .replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'web';
+
+      var IOS = 'https://apps.apple.com/app/id6800202888'
+              + '?ct=' + encodeURIComponent(src) + '&mt=8';
+      var PLAY = 'https://play.google.com/store/apps/details?id=com.hyperspeed.frontline'
+               + '&referrer=' + encodeURIComponent(
+                   'utm_source=' + src + '&utm_medium=social&utm_campaign=organic_' + src);
+
+      var ua = navigator.userAgent;
+      // iPadOS 13+ 는 UA 가 Macintosh 로 나오므로 터치 지원으로 가려낸다.
+      var isIOS = /iPad|iPhone|iPod/.test(ua)
+               || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/.test(ua);
+
+      window.__STORE = { ios: IOS, play: PLAY };
+      if (isIOS)          location.replace(IOS);
+      else if (isAndroid) location.replace(PLAY);
+      // 그 외(데스크톱)는 아래 선택 화면을 그대로 보여준다.
+    })();
+  </script>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;
+         background:#060a12;color:#f4f7ff;min-height:100vh;display:flex;
+         align-items:center;justify-content:center;padding:32px 20px;line-height:1.6;word-break:keep-all}
+    .wrap{max-width:520px;width:100%;text-align:center}
+    .shot{width:100%;border-radius:14px;border:1px solid #1d3a5c;display:block;margin-bottom:28px}
+    h1{font-size:2rem;letter-spacing:.14em;font-weight:900;font-style:italic;color:#e8f4ff;
+       text-shadow:0 0 18px rgba(73,184,255,.45)}
+    .tag{color:#49b8ff;margin-top:10px;font-size:1rem;font-weight:700}
+    ul{list-style:none;margin:22px 0 28px;color:#a9b7cc;font-size:.95rem}
+    li{margin:6px 0}
+    li::before{content:'▪';color:#49b8ff;margin-right:8px}
+    .btns{display:flex;flex-direction:column;gap:12px}
+    a.btn{background:#2f8fe0;color:#fff;text-decoration:none;padding:15px 24px;
+          border-radius:10px;font-weight:800;font-size:1.02rem;display:block}
+    a.btn.alt{background:#0d1626;color:#f4f7ff;border:1px solid #23446b;font-weight:700}
+    footer{margin-top:30px;color:#6f7f99;font-size:.82rem}
+    footer a{color:#49b8ff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="shot" src="og.jpg" alt="전선: 퍼즐 전쟁 플레이 화면" />
+    <h1>FRONTLINE</h1>
+    <p class="tag">전선: 퍼즐 전쟁</p>
+    <ul>
+      <li>블록을 맞추면 병력이 되는 매치3 전략 퍼즐</li>
+      <li>연쇄로 군대를 불리고 일격으로 전선을 뒤집기</li>
+      <li>8챕터 64스테이지 · 챕터 끝 거대한 적장</li>
+      <li>다른 플레이어의 판 기록과 겨루는 대전</li>
+    </ul>
+    <div class="btns">
+      <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.hyperspeed.frontline">Google Play (Android)</a>
+      <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6800202888">App Store (iPhone / iPad)</a>
+    </div>
+    <footer>© 2026 <a href="/">HYPERSPEED</a></footer>
+  </div>
+  <script>
+    // JS 가 돌면 버튼에도 유입 소스 태그를 붙인다(위 href 는 무-JS 폴백).
+    if (window.__STORE) {
+      document.getElementById('play').href = window.__STORE.play;
+      document.getElementById('ios').href  = window.__STORE.ios;
+    }
+  </script>
+</body>
+</html>
