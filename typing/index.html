@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>또박또박 한글 타자 · Learn Korean Typing — Download</title>
+  <meta name="description" content="Learn to type Hangul key by key. Big letters, key highlights, every word spoken aloud, K-pop and K-drama words and typing games. 19 languages. 큰 글씨로 쉽게 배우는 한글 타자 연습." />
+
+  <!-- 링크 미리보기 (Reddit / X / 카톡 / Discord) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HYPERSPEED" />
+  <meta property="og:title" content="또박또박 한글 타자 · Learn Korean Typing" />
+  <meta property="og:description" content="Learn to type Hangul key by key — big letters, key highlights, every word spoken aloud. 19 languages." />
+  <meta property="og:image" content="https://hyperspeedgames.com/typing/og.jpg" />
+  <meta property="og:url" content="https://hyperspeedgames.com/typing/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- 스토어가 앱을 직접 인식하도록 (Safari 스마트 배너) -->
+  <meta name="apple-itunes-app" content="app-id=6778862834" />
+
+  <script>
+    // ?s=<소스> 로 유입 채널을 구분한다. 예: /typing/?s=shorts, ?s=reddit, ?s=tiktok
+    // → Play 는 referrer(utm) 로, App Store 는 ct 로 넘어가 각 콘솔에서 집계된다(AEON · VALIX · FRONTLINE 과 같은 규칙).
+    // ⚠️ App Store ID 는 6778862834 다. 6770530839 는 **다른 회사 앱(왕초보 타자연습)** 이다 —
+    //    또박또박 저장소 문서에 벤치마킹 대상으로 그 숫자가 적혀 있어 헷갈리기 쉽다.
+    (function () {
+      var src = (new URLSearchParams(location.search).get('s') || 'web')
+                  .replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'web';
+
+      var IOS = 'https://apps.apple.com/app/id6778862834'
+              + '?ct=' + encodeURIComponent(src) + '&mt=8';
+      var PLAY = 'https://play.google.com/store/apps/details?id=com.hyperspeed.wangchobotyping'
+               + '&referrer=' + encodeURIComponent(
+                   'utm_source=' + src + '&utm_medium=social&utm_campaign=organic_' + src);
+
+      var ua = navigator.userAgent;
+      // iPadOS 13+ 는 UA 가 Macintosh 로 나오므로 터치 지원으로 가려낸다.
+      var isIOS = /iPad|iPhone|iPod/.test(ua)
+               || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/.test(ua);
+
+      window.__STORE = { ios: IOS, play: PLAY };
+      if (isIOS)          location.replace(IOS);
+      else if (isAndroid) location.replace(PLAY);
+      // 그 외(데스크톱)는 아래 선택 화면을 그대로 보여준다.
+    })();
+  </script>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;
+         background:#eef4ef;color:#1f2330;min-height:100vh;display:flex;
+         align-items:center;justify-content:center;padding:32px 20px;line-height:1.6;word-break:keep-all}
+    .wrap{max-width:520px;width:100%;text-align:center}
+    .shot{width:100%;border-radius:14px;border:1px solid #cfe0d3;display:block;margin-bottom:28px;
+          box-shadow:0 6px 24px rgba(40,80,55,.12)}
+    h1{font-size:2rem;font-weight:800;color:#1f2330;letter-spacing:.02em}
+    .tag{color:#4a8a63;margin-top:6px;font-size:1.05rem;font-weight:700}
+    ul{list-style:none;margin:22px 0 28px;color:#4d5566;font-size:.95rem}
+    li{margin:6px 0}
+    li::before{content:'●';color:#4a8a63;margin-right:8px;font-size:.7em;vertical-align:.15em}
+    .btns{display:flex;flex-direction:column;gap:12px}
+    a.btn{background:#4a8a63;color:#fff;text-decoration:none;padding:15px 24px;
+          border-radius:10px;font-weight:800;font-size:1.02rem;display:block}
+    a.btn.alt{background:#fff;color:#1f2330;border:1px solid #c4d8c9;font-weight:700}
+    footer{margin-top:30px;color:#8a90a2;font-size:.82rem}
+    footer a{color:#4a8a63}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="shot" src="og.jpg" alt="또박또박 한글 타자 — Learn Korean Typing" />
+    <h1 data-ko="또박또박 한글 타자">Learn Korean Typing</h1>
+    <p class="tag" data-ko="큰 글씨로 쉽고 자신있게">또박또박 · Learn slowly, step by step</p>
+    <ul>
+      <li data-ko="자판을 한 글자씩 짚어 주는 한글 타자 연습">Type Hangul key by key — the next key lights up</li>
+      <li data-ko="큰 글씨 · 키 강조 · 낱말마다 발음 듣기">Big letters, key highlights, every word spoken aloud</li>
+      <li data-ko="K-팝·K-드라마 단어, 짧은 글, 타자 게임">K-pop &amp; K-drama words, short sentences, typing games</li>
+      <li data-ko="두벌식·천지인 자판 · 19개 언어 지원">Standard &amp; 10-key keyboards · 19 languages</li>
+    </ul>
+    <div class="btns">
+      <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.hyperspeed.wangchobotyping">Google Play (Android)</a>
+      <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6778862834">App Store (iPhone / iPad)</a>
+    </div>
+    <footer>© 2026 <a href="/">HYPERSPEED</a></footer>
+  </div>
+  <script>
+    // JS 가 돌면 버튼에도 유입 소스 태그를 붙인다(위 href 는 무-JS 폴백).
+    if (window.__STORE) {
+      document.getElementById('play').href = window.__STORE.play;
+      document.getElementById('ios').href  = window.__STORE.ios;
+    }
+    // 기본은 영어(사용자 대부분이 외국인 학습자). 한국어 기기면 한국어로 바꾼다.
+    if (/^ko\b/i.test(navigator.language || '')) {
+      document.documentElement.lang = 'ko';
+      document.querySelectorAll('[data-ko]').forEach(function (el) { el.textContent = el.getAttribute('data-ko'); });
+    }
+  </script>
+</body>
+</html>
