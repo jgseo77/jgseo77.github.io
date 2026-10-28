@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기우뚱 마을 · Teeterville — 무료 다운로드</title>
+  <meta name="description" content="기울어지는 섬 위에 한 채씩 — 무너지지 않게 마을을 쌓는 물리 균형 퍼즐. 마을 8곳 · AI 대전 · 폰 하나로 같이 하기 · 오프라인 플레이." />
+
+  <!-- 링크 미리보기 (YouTube / 카톡 / X / Discord) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HYPERSPEED" />
+  <meta property="og:title" content="기우뚱 마을 · Teeterville" />
+  <meta property="og:description" content="기울어지는 섬 위에 한 채씩 — 무너지지 않게 마을을 쌓는 물리 균형 퍼즐. 무료로 플레이." />
+  <meta property="og:image" content="https://hyperspeedgames.com/teeterville/og.jpg" />
+  <meta property="og:url" content="https://hyperspeedgames.com/teeterville/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script>
+    // ?s=<소스> 로 유입 채널을 구분한다. 예: /teeterville/?s=shorts, ?s=reddit, ?s=tiktok
+    // → Play 는 referrer(utm) 로, App Store 는 ct 로 넘어가 각 콘솔에서 집계된다(AEON · VALIX · FRONTLINE · 또박또박과 같은 규칙).
+    // ⚠️ IOS_ID — App Store 1.0 심사 중(2026-10-24 제출). App Store Connect → 앱 정보 → 「Apple ID」(10자리 숫자)를 넣는다.
+    //    비어 있는 동안 아이폰은 이 페이지에 머물고 App Store 버튼 대신 「곧 출시」 를 보여 준다(Play 는 2026-10-27 공개).
+    var IOS_ID = '';
+    (function () {
+      var src = (new URLSearchParams(location.search).get('s') || 'web')
+                  .replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'web';
+
+      var IOS = IOS_ID ? 'https://apps.apple.com/app/id' + IOS_ID
+              + '?ct=' + encodeURIComponent(src) + '&mt=8' : '';
+      var PLAY = 'https://play.google.com/store/apps/details?id=com.hyperspeed.teeterville'
+               + '&referrer=' + encodeURIComponent(
+                   'utm_source=' + src + '&utm_medium=social&utm_campaign=organic_' + src);
+
+      var ua = navigator.userAgent;
+      // iPadOS 13+ 는 UA 가 Macintosh 로 나오므로 터치 지원으로 가려낸다.
+      var isIOS = /iPad|iPhone|iPod/.test(ua)
+               || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/.test(ua);
+
+      window.__STORE = { ios: IOS, play: PLAY };
+      if (isIOS && IOS)   location.replace(IOS);
+      else if (isAndroid) location.replace(PLAY);
+      // 그 외(데스크톱 · App Store 공개 전 아이폰)는 아래 선택 화면을 그대로 보여준다.
+    })();
+  </script>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;
+         background:linear-gradient(180deg,#e9e3f7 0%,#fbe6d4 100%);color:#3a2a48;min-height:100vh;display:flex;
+         align-items:center;justify-content:center;padding:32px 20px;line-height:1.6;word-break:keep-all}
+    .wrap{max-width:520px;width:100%;text-align:center}
+    .shot{width:100%;border-radius:14px;border:1px solid #e3d3ea;display:block;margin-bottom:28px;
+          box-shadow:0 6px 24px rgba(90,50,110,.15)}
+    h1{font-size:2rem;font-weight:800;color:#3a2a48;letter-spacing:.02em}
+    .tag{color:#c0508a;margin-top:6px;font-size:1.05rem;font-weight:700}
+    ul{list-style:none;margin:22px 0 28px;color:#5a4a66;font-size:.95rem}
+    li{margin:6px 0}
+    li::before{content:'●';color:#c0508a;margin-right:8px;font-size:.7em;vertical-align:.15em}
+    .btns{display:flex;flex-direction:column;gap:12px}
+    a.btn{background:#c0508a;color:#fff;text-decoration:none;padding:15px 24px;
+          border-radius:10px;font-weight:800;font-size:1.02rem;display:block}
+    a.btn.alt{background:#fff;color:#3a2a48;border:1px solid #dcc8e2;font-weight:700}
+    .soon{background:#fff;color:#8a7a96;border:1px dashed #dcc8e2;padding:15px 24px;border-radius:10px;font-weight:700;font-size:1.02rem;display:none}
+    footer{margin-top:30px;color:#8a7f96;font-size:.82rem}
+    footer a{color:#c0508a}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="shot" id="shot" src="og.jpg" alt="기우뚱 마을 · Teeterville" />
+    <h1 data-en="Teeterville">기우뚱 마을</h1>
+    <p class="tag" data-en="One more house... if it doesn't tip!">아슬아슬, 한 채만 더</p>
+    <ul>
+      <li data-en="Build on a floating island that tilts toward the weight">무게가 쏠리는 쪽으로 기우는 섬 위에 마을 짓기</li>
+      <li data-en="8 villages, 8 rules — Hanok, Seoul, castle, snowfield and more">마을 8곳 · 규칙 8가지 — 한옥 · 서울 도심 · 중세 성 · 설원 …</li>
+      <li data-en="AI battles, or pass one phone around with 2–4 friends">AI 대전 · 폰 하나로 2~4명 같이 하기</li>
+      <li data-en="Plays offline · 16 languages">인터넷 없이 플레이 · 16개 언어</li>
+    </ul>
+    <div class="btns">
+      <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.hyperspeed.teeterville">Google Play (Android)</a>
+      <a class="btn alt" id="ios" href="https://hyperspeedgames.com/">App Store (iPhone / iPad)</a>
+      <div class="soon" id="soon" data-en="App Store (iPhone / iPad) — coming soon">App Store (아이폰 / 아이패드) — 곧 출시</div>
+    </div>
+    <footer>© 2026 <a href="/">HYPERSPEED</a></footer>
+  </div>
+  <script>
+    // JS 가 돌면 버튼에도 유입 소스 태그를 붙인다(위 href 는 무-JS 폴백).
+    if (window.__STORE) {
+      document.getElementById('play').href = window.__STORE.play;
+      if (window.__STORE.ios) document.getElementById('ios').href = window.__STORE.ios;
+      else { document.getElementById('ios').style.display = 'none'; document.getElementById('soon').style.display = 'block'; }
+    }
+    // 기본은 한국어(유튜브 쇼츠 · 국내 유입). 한국어 기기가 아니면 영어로 바꾼다.
+    if (!/^ko\b/i.test(navigator.language || '')) {
+      document.documentElement.lang = 'en';
+      document.getElementById('shot').src = 'og-en.jpg';
+      document.querySelectorAll('[data-en]').forEach(function (el) { el.textContent = el.getAttribute('data-en'); });
+    }
+  </script>
+</body>
+</html>
