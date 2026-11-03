@@ -18,9 +18,8 @@
   <script>
     // ?s=<소스> 로 유입 채널을 구분한다. 예: /teeterville/?s=shorts, ?s=reddit, ?s=tiktok
     // → Play 는 referrer(utm) 로, App Store 는 ct 로 넘어가 각 콘솔에서 집계된다(AEON · VALIX · FRONTLINE · 또박또박과 같은 규칙).
-    // ⚠️ IOS_ID — App Store 1.0 심사 중(2026-10-24 제출). App Store Connect → 앱 정보 → 「Apple ID」(10자리 숫자)를 넣는다.
-    //    비어 있는 동안 아이폰은 이 페이지에 머물고 App Store 버튼 대신 「곧 출시」 를 보여 준다(Play 는 2026-10-27 공개).
-    var IOS_ID = '';
+    // IOS_ID — App Store 1.0 공개(2026-11-03). 비우면 아이폰은 이 페이지에 머물고 「곧 출시」 를 보여 준다.
+    var IOS_ID = '6822743426';
     (function () {
       var src = (new URLSearchParams(location.search).get('s') || 'web')
                   .replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'web';
