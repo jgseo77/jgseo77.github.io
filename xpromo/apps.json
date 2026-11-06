@@ -1,0 +1,118 @@
+{
+ "v": 1,
+ "updated": "2026-11-06",
+ "apps": [
+  {
+   "kind": "aeon",
+   "ios": "6788979247",
+   "android": "com.hyperspeed.aeon",
+   "name": {
+    "en": "AEON: Idle Universe",
+    "ko": "AEON: 방치형 우주 키우기",
+    "ja": "AEON: 宇宙育成放置ゲーム",
+    "zh-Hant": "AEON: 放置宇宙養成",
+    "zh-Hans": "AEON: 放置宇宙养成",
+    "es": "AEON: Universo Idle",
+    "de": "AEON: Idle Universum",
+    "pt-BR": "AEON: Universo Idle",
+    "ru": "AEON: Вселенная-кликер",
+    "uk": "AEON: Айдл-всесвіт",
+    "id": "AEON: Alam Semesta Idle",
+    "vi": "AEON: Vũ trụ nhàn rỗi",
+    "fr": "AEON: Univers idle",
+    "it": "AEON: Universo Idle",
+    "tr": "AEON: Idle Evren",
+    "pl": "AEON: Wszechświat idle"
+   },
+   "icon": "https://hyperspeedgames.com/xpromo/aeon.webp",
+   "short": {
+    "all": "AEON"
+   }
+  },
+  {
+   "kind": "teeterville",
+   "ios": "6822743426",
+   "android": "com.hyperspeed.teeterville",
+   "name": {
+    "en": "Teeterville",
+    "ko": "기우뚱 마을"
+   },
+   "icon": "https://hyperspeedgames.com/xpromo/teeterville.webp"
+  },
+  {
+   "kind": "wangchobo",
+   "ios": "6778862834",
+   "android": "com.hyperspeed.wangchobotyping",
+   "name": {
+    "en": "Learn Korean Typing",
+    "ko": "또박또박 한글 타자",
+    "ja": "韓国語タイピング入門 - ハングル",
+    "zh-Hant": "韓文打字入門 - 韓文鍵盤練習",
+    "zh-Hans": "韩语打字入门 - 韩文键盘练习",
+    "es": "Aprende a Escribir en Coreano",
+    "de": "Koreanisch Tippen Lernen",
+    "pt-BR": "Aprender a Digitar em Coreano",
+    "ru": "Учим корейский набор",
+    "uk": "Вчимо корейський набір",
+    "id": "Belajar Mengetik Korea",
+    "vi": "Học Gõ Tiếng Hàn - Hangul",
+    "fr": "Apprendre à taper en coréen",
+    "it": "Impara a Scrivere in Coreano",
+    "tr": "Korece Yazı Öğren - Hangul",
+    "pl": "Nauka Pisania po Koreańsku"
+   },
+   "icon": "https://hyperspeedgames.com/xpromo/wangchobo.webp",
+   "short": {
+    "en": "Korean Typing",
+    "ja": "韓国語タイピング",
+    "zh-Hant": "韓文打字入門",
+    "zh-Hans": "韩语打字入门"
+   }
+  },
+  {
+   "kind": "valix",
+   "ios": "6772428299",
+   "android": "com.hyperspeed.valix",
+   "name": {
+    "en": "VALIX — Space Shooter",
+    "ko": "VALIX — 비행 슈팅게임"
+   },
+   "icon": "https://hyperspeedgames.com/xpromo/valix.webp",
+   "short": {
+    "all": "VALIX"
+   }
+  },
+  {
+   "kind": "vanta",
+   "ios": "6782882946",
+   "android": "com.hyperspeed.vanta",
+   "name": {
+    "en": "VANTA: Space Survivor",
+    "ko": "VANTA: 우주 생존 뱀서라이크"
+   },
+   "icon": "https://hyperspeedgames.com/xpromo/vanta.webp",
+   "short": {
+    "all": "VANTA"
+   }
+  },
+  {
+   "kind": "frontline",
+   "ios": "6800202888",
+   "android": "com.hyperspeed.frontline",
+   "name": {
+    "en": "FRONTLINE: Puzzle War",
+    "ko": "전선: 퍼즐 전쟁",
+    "ja": "FRONTLINE：パズル戦争",
+    "zh-Hant": "FRONTLINE：消除戰爭",
+    "zh-Hans": "FRONTLINE：消除战争",
+    "es": "FRONTLINE: Guerra de Puzles",
+    "de": "FRONTLINE: Puzzle-Krieg"
+   },
+   "icon": "https://hyperspeedgames.com/xpromo/frontline.webp",
+   "short": {
+    "all": "FRONTLINE",
+    "ko": "전선: 퍼즐 전쟁"
+   }
+  }
+ ]
+}
