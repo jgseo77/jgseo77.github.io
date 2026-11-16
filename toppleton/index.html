@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우지끈 왕국 · Toppleton — 무료 다운로드</title>
+  <meta name="description" content="블록 하나하나가 부서지는 3D 물리 철거 퍼즐. 운석으로 뚫고 연쇄 폭발로 무너뜨리세요. 12개 테마 · 180레벨 · 16개 언어." />
+
+  <!-- 링크 미리보기 (YouTube / 카톡 / X / Discord) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HYPERSPEED" />
+  <meta property="og:title" content="우지끈 왕국 · Toppleton" />
+  <meta property="og:description" content="블록 하나하나가 부서지는 3D 물리 철거 퍼즐. 운석으로 뚫고 연쇄 폭발로 와르르! 무료로 플레이." />
+  <meta property="og:image" content="https://hyperspeedgames.com/toppleton/og.jpg" />
+  <meta property="og:url" content="https://hyperspeedgames.com/toppleton/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script>
+    // ?s=<소스> 로 유입 채널을 구분한다. 예: /toppleton/?s=shorts, ?s=reddit, ?s=tiktok
+    // → Play 는 referrer(utm) 로, App Store 는 ct 로 넘어가 각 콘솔에서 집계된다(기우뚱 마을 · AEON · VALIX · FRONTLINE · 또박또박과 같은 규칙).
+    // IOS_ID — App Store 1.0. 비우면 아이폰은 이 페이지에 머물고 「곧 출시」 를 보여 준다.
+    var IOS_ID = '6832269497';
+    (function () {
+      var src = (new URLSearchParams(location.search).get('s') || 'web')
+                  .replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'web';
+
+      var IOS = IOS_ID ? 'https://apps.apple.com/app/id' + IOS_ID
+              + '?ct=' + encodeURIComponent(src) + '&mt=8' : '';
+      var PLAY = 'https://play.google.com/store/apps/details?id=com.hyperspeed.toppleton'
+               + '&referrer=' + encodeURIComponent(
+                   'utm_source=' + src + '&utm_medium=social&utm_campaign=organic_' + src);
+
+      var ua = navigator.userAgent;
+      // iPadOS 13+ 는 UA 가 Macintosh 로 나오므로 터치 지원으로 가려낸다.
+      var isIOS = /iPad|iPhone|iPod/.test(ua)
+               || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/.test(ua);
+
+      window.__STORE = { ios: IOS, play: PLAY };
+      if (isIOS && IOS)   location.replace(IOS);
+      else if (isAndroid) location.replace(PLAY);
+      // 그 외(데스크톱 · App Store 공개 전 아이폰)는 아래 선택 화면을 그대로 보여준다.
+    })();
+  </script>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;
+         background:linear-gradient(180deg,#ffd9a8 0%,#ffb38a 45%,#c98bb9 100%);color:#3b2416;min-height:100vh;display:flex;
+         align-items:center;justify-content:center;padding:32px 20px;line-height:1.6;word-break:keep-all}
+    .wrap{max-width:520px;width:100%;text-align:center}
+    .shot{width:100%;border-radius:14px;border:1px solid rgba(120,60,30,.18);display:block;margin-bottom:28px;
+          box-shadow:0 8px 28px rgba(110,50,20,.25)}
+    h1{font-size:2rem;font-weight:800;color:#3b2416;letter-spacing:.02em}
+    .tag{color:#c2410c;margin-top:6px;font-size:1.05rem;font-weight:700}
+    ul{list-style:none;margin:22px 0 28px;color:#5a3a26;font-size:.95rem}
+    li{margin:6px 0}
+    li::before{content:'●';color:#c2410c;margin-right:8px;font-size:.7em;vertical-align:.15em}
+    .btns{display:flex;flex-direction:column;gap:12px}
+    a.btn{background:#c2410c;color:#fff;text-decoration:none;padding:15px 24px;
+          border-radius:10px;font-weight:800;font-size:1.02rem;display:block}
+    a.btn.alt{background:#fff;color:#3b2416;border:1px solid #e8c3a6;font-weight:700}
+    .soon{background:#fff;color:#8a6a56;border:1px dashed #e8c3a6;padding:15px 24px;border-radius:10px;font-weight:700;font-size:1.02rem;display:none}
+    footer{margin-top:30px;color:#6b4a3a;font-size:.82rem}
+    footer a{color:#9a3412}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="shot" id="shot" src="og.jpg" alt="우지끈 왕국 · Toppleton" />
+    <h1 data-en="Toppleton">우지끈 왕국</h1>
+    <p class="tag" data-en="Where do you hit to bring it all down?">어디를 맞히면 와르르 무너질까?</p>
+    <ul>
+      <li data-en="A 3D physics demolition puzzle where every block can break">블록 하나하나가 부서지는 3D 물리 철거 퍼즐</li>
+      <li data-en="12 themes · 180 levels — sky isles, desert ruins, a toy room, outer space …">12개 테마 · 180레벨 — 하늘섬 · 사막 유적 · 장난감 방 · 우주 …</li>
+      <li data-en="7 projectiles · pierce shots · chain blasts · a new Daily Building every day">투하물 7종 · 관통 · 연쇄 폭발 · 매일 바뀌는 「오늘의 건물」</li>
+      <li data-en="Themes 1–4 free · 16 languages">테마 1~4 무료 · 16개 언어</li>
+    </ul>
+    <div class="btns">
+      <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.hyperspeed.toppleton">Google Play (Android)</a>
+      <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6832269497">App Store (iPhone / iPad)</a>
+      <div class="soon" id="soon" data-en="App Store (iPhone / iPad) — coming soon">App Store (아이폰 / 아이패드) — 곧 출시</div>
+    </div>
+    <footer>© 2026 <a href="/">HYPERSPEED</a> · <a href="/TOPPLETON-privacy/" data-en="Privacy Policy">개인정보처리방침</a></footer>
+  </div>
+  <script>
+    // JS 가 돌면 버튼에도 유입 소스 태그를 붙인다(위 href 는 무-JS 폴백).
+    if (window.__STORE) {
+      document.getElementById('play').href = window.__STORE.play;
+      if (window.__STORE.ios) document.getElementById('ios').href = window.__STORE.ios;
+      else { document.getElementById('ios').style.display = 'none'; document.getElementById('soon').style.display = 'block'; }
+    }
+    // 기본은 한국어(유튜브 쇼츠 · 국내 유입). 한국어 기기가 아니면 영어로 바꾼다.
+    if (!/^ko\b/i.test(navigator.language || '')) {
+      document.documentElement.lang = 'en';
+      document.title = 'Toppleton: Voxel Demolition — Free Download';
+      document.getElementById('shot').src = 'og-en.jpg';
+      document.querySelectorAll('[data-en]').forEach(function (el) { el.textContent = el.getAttribute('data-en'); });
+    }
+  </script>
+</body>
+</html>
