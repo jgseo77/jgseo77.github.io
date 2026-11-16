@@ -18,13 +18,14 @@
   <script>
     // ?s=<소스> 로 유입 채널을 구분한다. 예: /toppleton/?s=shorts, ?s=reddit, ?s=tiktok
     // → Play 는 referrer(utm) 로, App Store 는 ct 로 넘어가 각 콘솔에서 집계된다(기우뚱 마을 · AEON · VALIX · FRONTLINE · 또박또박과 같은 규칙).
-    // IOS_ID — App Store 1.0. 비우면 아이폰은 이 페이지에 머물고 「곧 출시」 를 보여 준다.
-    var IOS_ID = '6832269497';
+    // IOS_ID — App Store 1.0. IOS_LIVE 가 false 면 아이폰은 이 페이지에 머물고, App Store 버튼은 「출시 대기 중」 알림을 띄운다.
+    // ⚠️ App Store 공개되면 IOS_LIVE = true 로 + 홈(/index.html) 카드의 App Store 링크에서 onclick 알림 빼기.
+    var IOS_ID = '6832269497', IOS_LIVE = false;
     (function () {
       var src = (new URLSearchParams(location.search).get('s') || 'web')
                   .replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'web';
 
-      var IOS = IOS_ID ? 'https://apps.apple.com/app/id' + IOS_ID
+      var IOS = IOS_ID && IOS_LIVE ? 'https://apps.apple.com/app/id' + IOS_ID
               + '?ct=' + encodeURIComponent(src) + '&mt=8' : '';
       var PLAY = 'https://play.google.com/store/apps/details?id=com.hyperspeed.toppleton'
                + '&referrer=' + encodeURIComponent(
@@ -60,7 +61,6 @@
     a.btn{background:#c2410c;color:#fff;text-decoration:none;padding:15px 24px;
           border-radius:10px;font-weight:800;font-size:1.02rem;display:block}
     a.btn.alt{background:#fff;color:#3b2416;border:1px solid #e8c3a6;font-weight:700}
-    .soon{background:#fff;color:#8a6a56;border:1px dashed #e8c3a6;padding:15px 24px;border-radius:10px;font-weight:700;font-size:1.02rem;display:none}
     footer{margin-top:30px;color:#6b4a3a;font-size:.82rem}
     footer a{color:#9a3412}
   </style>
@@ -79,7 +79,6 @@
     <div class="btns">
       <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.hyperspeed.toppleton">Google Play (Android)</a>
       <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6832269497">App Store (iPhone / iPad)</a>
-      <div class="soon" id="soon" data-en="App Store (iPhone / iPad) — coming soon">App Store (아이폰 / 아이패드) — 곧 출시</div>
     </div>
     <footer>© 2026 <a href="/">HYPERSPEED</a> · <a href="/TOPPLETON-privacy/" data-en="Privacy Policy">개인정보처리방침</a></footer>
   </div>
@@ -88,7 +87,12 @@
     if (window.__STORE) {
       document.getElementById('play').href = window.__STORE.play;
       if (window.__STORE.ios) document.getElementById('ios').href = window.__STORE.ios;
-      else { document.getElementById('ios').style.display = 'none'; document.getElementById('soon').style.display = 'block'; }
+      else document.getElementById('ios').onclick = function (e) {
+        e.preventDefault();
+        alert(document.documentElement.lang === 'ko'
+          ? 'App Store 출시 대기 중입니다. 곧 만나요!'
+          : 'Coming soon to the App Store — it is waiting for release.');
+      };
     }
     // 기본은 한국어(유튜브 쇼츠 · 국내 유입). 한국어 기기가 아니면 영어로 바꾼다.
     if (!/^ko\b/i.test(navigator.language || '')) {
