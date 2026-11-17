@@ -1,7 +1,35 @@
 {
  "v": 1,
- "updated": "2026-11-06",
+ "updated": "2026-11-17",
  "apps": [
+  {
+   "kind": "toppleton",
+   "android": "com.hyperspeed.toppleton",
+   "name": {
+    "en": "Toppleton: Voxel Demolition",
+    "ko": "우지끈 왕국: 복셀 철거 퍼즐",
+    "ja": "Toppleton: ボクセル解体",
+    "zh-Hant": "Toppleton: 方塊建築大拆除",
+    "zh-Hans": "Toppleton: 方块建筑大拆除",
+    "es": "Toppleton: Demolición Vóxel",
+    "de": "Toppleton: Voxel-Abriss",
+    "pt-BR": "Toppleton: Demolição Voxel",
+    "ru": "Toppleton: Снос из вокселей",
+    "uk": "Toppleton: Знесення з вокселів",
+    "id": "Toppleton: Demolisi Voksel",
+    "vi": "Toppleton: Phá dỡ Voxel",
+    "fr": "Toppleton: Démolition Voxel",
+    "it": "Toppleton: Demolizione Voxel",
+    "tr": "Toppleton: Voksel Yıkım",
+    "pl": "Toppleton: Wokselowa rozbiórka"
+   },
+   "icon": "https://hyperspeedgames.com/xpromo/toppleton.webp",
+   "short": {
+    "all": "Toppleton",
+    "ko": "우지끈 왕국"
+   },
+   "newUntil": "2026-12-31"
+  },
   {
    "kind": "aeon",
    "ios": "6788979247",
