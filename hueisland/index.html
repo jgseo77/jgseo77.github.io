@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>색을 되찾는 섬 · Hue Island — 무료 다운로드</title>
+  <meta name="description" content="작은 정령이 되어 날며 흑백 세계에 색을 되찾는 3D 힐링 색칠 여행. 6개 지역 · 24판 · 광고 없음 · 16개 언어." />
+
+  <!-- 링크 미리보기 (YouTube / 카톡 / X / Discord) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HYPERSPEED" />
+  <meta property="og:title" content="색을 되찾는 섬 · Hue Island" />
+  <meta property="og:description" content="날기만 하면 색이 번지는 3D 힐링 색칠 여행. 광고 없이 무료로 시작하세요." />
+  <meta property="og:image" content="https://hyperspeedgames.com/hueisland/og.jpg" />
+  <meta property="og:url" content="https://hyperspeedgames.com/hueisland/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script>
+    // ?s=<소스> 로 유입 채널을 구분한다. 예: /hueisland/?s=shorts, ?s=shorts_en, ?s=reddit
+    // → Play 는 referrer(utm) 로, App Store 는 ct 로 넘어가 각 콘솔에서 집계된다(우지끈 왕국 /toppleton 과 같은 규칙).
+    // ⚠️ 출시 전: PLAY_LIVE · IOS_LIVE 가 false 면 그 기기는 이 페이지에 머물고, 그 스토어 버튼은 「출시 대기 중」 알림을 띄운다.
+    //    Play 공개되면 PLAY_LIVE = true, App Store 공개되면 IOS_LIVE = true.
+    var IOS_ID = '6837240008', IOS_LIVE = false, PLAY_LIVE = false;
+    (function () {
+      var src = (new URLSearchParams(location.search).get('s') || 'web')
+                  .replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'web';
+
+      var IOS = IOS_ID && IOS_LIVE ? 'https://apps.apple.com/app/id' + IOS_ID
+              + '?ct=' + encodeURIComponent(src) + '&mt=8' : '';
+      var PLAY = PLAY_LIVE ? 'https://play.google.com/store/apps/details?id=com.hyperspeed.hueisland'
+               + '&referrer=' + encodeURIComponent(
+                   'utm_source=' + src + '&utm_medium=social&utm_campaign=organic_' + src) : '';
+
+      var ua = navigator.userAgent;
+      // iPadOS 13+ 는 UA 가 Macintosh 로 나오므로 터치 지원으로 가려낸다.
+      var isIOS = /iPad|iPhone|iPod/.test(ua)
+               || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/.test(ua);
+
+      window.__STORE = { ios: IOS, play: PLAY };
+      if (isIOS && IOS)            location.replace(IOS);
+      else if (isAndroid && PLAY)  location.replace(PLAY);
+      // 그 외(데스크톱 · 출시 전 기기)는 아래 선택 화면을 그대로 보여준다.
+    })();
+  </script>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;
+         background:linear-gradient(180deg,#d8f3ee 0%,#a9e1e6 45%,#7fb7e0 100%);color:#16324a;min-height:100vh;display:flex;
+         align-items:center;justify-content:center;padding:32px 20px;line-height:1.6;word-break:keep-all}
+    .wrap{max-width:520px;width:100%;text-align:center}
+    .shot{width:100%;border-radius:14px;border:1px solid rgba(20,60,90,.18);display:block;margin-bottom:28px;
+          box-shadow:0 8px 28px rgba(20,60,100,.25)}
+    h1{font-size:2rem;font-weight:800;color:#16324a;letter-spacing:.02em}
+    .tag{color:#0f766e;margin-top:6px;font-size:1.05rem;font-weight:700}
+    ul{list-style:none;margin:22px 0 28px;color:#2a4a62;font-size:.95rem}
+    li{margin:6px 0}
+    li::before{content:'●';color:#0f766e;margin-right:8px;font-size:.7em;vertical-align:.15em}
+    .btns{display:flex;flex-direction:column;gap:12px}
+    a.btn{background:#0f766e;color:#fff;text-decoration:none;padding:15px 24px;
+          border-radius:10px;font-weight:800;font-size:1.02rem;display:block}
+    a.btn.alt{background:#fff;color:#16324a;border:1px solid #b6d7e2;font-weight:700}
+    footer{margin-top:30px;color:#3a5a72;font-size:.82rem}
+    footer a{color:#0f5e8a}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="shot" id="shot" src="og.jpg" alt="색을 되찾는 섬 · Hue Island" />
+    <h1 data-en="Hue Island">색을 되찾는 섬</h1>
+    <p class="tag" data-en="Fly as a little spirit and bring color back to a grey world">작은 정령이 되어, 흑백 세계에 색을 되찾아요</p>
+    <ul>
+      <li data-en="A relaxing 3D coloring journey — color spreads wherever you fly">날기만 하면 색이 번지는 3D 힐링 색칠 여행</li>
+      <li data-en="6 regions · 24 stages — an island, the deep sea, a desert, frozen land, a forest, the moon">6개 지역 · 24판 — 섬 · 깊은 바다 · 사막 · 얼어붙은 땅 · 숲 · 달</li>
+      <li data-en="Meet animals and fill a 169-entry collection">동물들을 만나며 채우는 도감 169칸</li>
+      <li data-en="No ads · Play offline · 16 languages">광고 없음 · 오프라인 플레이 · 16개 언어</li>
+    </ul>
+    <div class="btns">
+      <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.hyperspeed.hueisland">Google Play (Android)</a>
+      <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6837240008">App Store (iPhone / iPad)</a>
+    </div>
+    <footer>© 2026 <a href="/">HYPERSPEED</a> · <a href="/HUEISLAND-privacy/" data-en="Privacy Policy">개인정보처리방침</a></footer>
+  </div>
+  <script>
+    // JS 가 돌면 버튼에도 유입 소스 태그를 붙인다(위 href 는 무-JS 폴백). 출시 전 스토어는 알림.
+    function soon(e) {
+      e.preventDefault();
+      alert(document.documentElement.lang === 'ko'
+        ? '스토어 출시 대기 중입니다. 곧 만나요!'
+        : 'Coming soon — it is waiting for release.');
+    }
+    if (window.__STORE) {
+      var p = document.getElementById('play'), i = document.getElementById('ios');
+      if (window.__STORE.play) p.href = window.__STORE.play; else p.onclick = soon;
+      if (window.__STORE.ios) i.href = window.__STORE.ios; else i.onclick = soon;
+    }
+    // 기본은 한국어(유튜브 쇼츠 · 국내 유입). 한국어 기기가 아니면 영어로 바꾼다.
+    if (!/^ko\b/i.test(navigator.language || '')) {
+      document.documentElement.lang = 'en';
+      document.title = 'Hue Island: Color Journey — Free Download';
+      document.getElementById('shot').src = 'og-en.jpg';
+      document.querySelectorAll('[data-en]').forEach(function (el) { el.textContent = el.getAttribute('data-en'); });
+    }
+  </script>
+</body>
+</html>
